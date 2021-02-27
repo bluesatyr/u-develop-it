@@ -10,7 +10,7 @@ router.get('/voters', (req, res) => {
 
     db.all(sql, params, (err, rows) => {
         if (err) {
-            res.status(500).json
+            res.status(500).json({ error: err.message });
         }
         res.json({
             message: 'success',
